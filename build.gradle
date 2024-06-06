@@ -24,6 +24,8 @@ dependencies {
     }
     implementation 'org.springframework.boot:spring-boot-starter-jetty'
     implementation 'org.postgresql:postgresql'
+    implementation 'com.google.zxing:core:3.4.1'
+    implementation 'com.google.zxing:javase:3.4.1'
 
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.flywaydb:flyway-database-postgresql'
