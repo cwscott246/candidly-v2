@@ -21,14 +21,17 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
+
 
 @RestController
 @RequestMapping("/qr")
 public class QRResource {
 
-    @GetMapping("/{text}")
-    public ResponseEntity<byte[]> generateQRCode(@PathVariable("text") String text) {
+    @GetMapping("/generate")
+    public ResponseEntity<byte[]> generateQRCode() {
         try {
+            String text = UUID.randomUUID().toString();
             int size = 250;
             Map<EncodeHintType, Object> hints = new HashMap<>();
             hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
